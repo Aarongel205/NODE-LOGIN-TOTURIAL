@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            border-radius: 5px;
+            border:  2px solid black;
+            padding: 10px;
+            width: 420px;
+            height: 320px;
+        }
+        .register-div{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input{
+            padding: 5px;
+            margin: 5px
+        }
+
+        button{
+            width: 120px;
+        }
+    </style>
+</head>
+<body>
+    <form action="/users/register" method="POST">
+        <div class="register-div">
+            <h1>Register</h1>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="password">
+            <input type="password" placeholder="confirm password">
+            <button type="submit" value="register">register</button>
+        </div>
+        <a href="/users/login">Already have an account? login here</a>
+    </form>
+</body>
+</html>
