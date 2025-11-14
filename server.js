@@ -67,6 +67,11 @@ app.post('/users/register', async (req, res) => {
                     throw err;
                 }
                 console.log(results.rows);
+
+                if(results.rows.length > 0){
+                    errors.push({message: "Email already registered"});
+                    res.render('register', { errors })
+                }
             }
         )
     }
