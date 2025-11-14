@@ -46,11 +46,18 @@
     <form action="/users/register" method="POST">
         <div class="register-div">
             <h1>Register</h1>
-            <input type="text" placeholder="Name">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="password">
-            <input type="password" placeholder="confirm password">
-            <button type="submit" value="register">register</button>
+            <ul>
+                <% if(typeof errors != 'undefined') { %>
+                    <% errors.forEach(error =>{ %>
+                        <li><%= error.message %></li>
+                    <% }) %>
+                <% } %>
+            </ul>
+            <input type="text" id="name" name="name" placeholder="Name">
+            <input type="email" id="email" name="email" placeholder="Email">
+            <input type="password" id="password" name="password" placeholder="password">
+            <input type="password" id="confirmPass" name="confirmPass" placeholder="confirm password">
+            <button type="submit" value="=Register">register</button>
         </div>
         <a href="/users/login">Already have an account? login here</a>
     </form>
